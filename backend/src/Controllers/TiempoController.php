@@ -1,0 +1,171 @@
+<?php
+/*
+* Tiempo Controller
+*/
+
+namespace App\Controllers;
+
+use App\Models\Tiempo;
+use App\Utils\Response;
+use App\Utils\Validator;
+use App\Utils\Logger;
+
+class TiempoController {
+    private $tiempoModel;
+
+    public function __construct() {
+        $this->tiempoModel = new Tiempo();
+    }
+
+    /*
+    * Listar todos
+    * GET /tiempos
+    */
+    public function index(): void {
+        try {
+            $data = $this->tiempoModel->all();
+            Response::success($data);
+        } catch (\Exception $e) {
+            Logger::exception($e);
+            Response::serverError('Error al obtener registros');
+        }
+    }
+
+    /*
+    * Obtener uno
+    * GET /tiempos/{id}
+    */
+    public function show(int $id): void {
+        try {
+            $data = $this->tiempoModel->find($id);
+
+            if (!$data) {
+                Response::notFound('Registro no encontrado');
+                return;
+            }
+
+            Response::success($data);
+        } catch (\Exception $e) {
+            Logger::exception($e);
+            Response::serverError('Error al obtener registro');
+        }
+    }
+
+    /*
+    * Crear
+    * POST /tiempos
+    */
+    public function store(): void {
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        // Validar datos
+        $errors = Validator::validate($data, [
+            'idTiemposTipo'    => ['required'],
+            'idTiemposFamilia' => ['required'],
+            'Nombre'           => ['required']
+        ]);
+
+        if (!empty($errors)) {
+            Response::validationError($errors);
+            return;
+        }
+
+        // Validar unicidad de idTiemposTipo + idTiemposFamilia + Nombre
+        if (!$this->tiempoModel->validateUniqueidTiemposTipoidTiemposFamiliaNombre($data['idTiemposTipo'], $data['idTiemposFamilia'], $data['Nombre'], $id ?? null)) {
+            Response::validationError([
+                'idTiemposTipo' => ['idTiemposTipo + idTiemposFamilia + Nombre ya existe'],
+            ]);
+            return;
+        }
+
+        try {
+            $id = $this->tiempoModel->create($data);
+            Response::success(['id' => $id], 'Registro creado exitosamente', 201);
+        } catch (\Exception $e) {
+            Logger::exception($e);
+            Response::serverError('Error al crear registro');
+        }
+    }
+
+    /*
+    * Actualizar
+    * PUT /tiempos/{id}
+    */
+    public function update(int $id): void {
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        // Validar datos
+        $errors = Validator::validate($data, [
+            'idTiemposTipo'    => ['required'],
+            'idTiemposFamilia' => ['required'],
+            'Nombre'           => ['required']
+        ]);
+
+        if (!empty($errors)) {
+            Response::validationError($errors);
+            return;
+        }
+
+        // Validar unicidad de idTiemposTipo + idTiemposFamilia + Nombre
+        if (!$this->tiempoModel->validateUniqueidTiemposTipoidTiemposFamiliaNombre($data['idTiemposTipo'], $data['idTiemposFamilia'], $data['Nombre'], $id ?? null)) {
+            Response::validationError([
+                'idTiemposTipo' => ['idTiemposTipo + idTiemposFamilia + Nombre ya existe'],
+            ]);
+            return;
+        }
+
+        try {
+            $result = $this->tiempoModel->update($id, $data);
+
+            if (!$result) {
+                Response::notFound('Registro no encontrado');
+                return;
+            }
+
+            Response::success(null, 'Registro actualizado exitosamente');
+        } catch (\Exception $e) {
+            Logger::exception($e);
+            Response::serverError('Error al actualizar registro');
+        }
+    }
+
+    /*
+    * Eliminar (desactivar)
+    * DELETE /tiempos/{id}
+    */
+    public function destroy(int $id): void {
+        try {
+            $result = $this->tiempoModel->delete($id);
+
+            if (!$result) {
+                Response::notFound('Registro no encontrado');
+                return;
+            }
+
+            Response::success(null, 'Registro eliminado exitosamente');
+        } catch (\Exception $e) {
+            Logger::exception($e);
+            Response::serverError('Error al eliminar registro');
+        }
+    }
+
+    /*
+    * Activar
+    * POST /tiempos/{id}/activate
+    */
+    public function activate(int $id): void {
+        try {
+            $result = $this->tiempoModel->activate($id);
+
+            if (!$result) {
+                Response::notFound('Registro no encontrado');
+                return;
+            }
+
+            Response::success(null, 'Registro activado exitosamente');
+        } catch (\Exception $e) {
+            Logger::exception($e);
+            Response::serverError('Error al activar registro');
+        }
+    }
+}
