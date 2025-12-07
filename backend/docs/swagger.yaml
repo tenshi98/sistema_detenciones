@@ -1,0 +1,567 @@
+openapi: 3.0.0
+info:
+  title: Sistema de Registro de Tiempos Muertos API
+  description: API para el sistema de gestión y registro de detenciones y tiempos muertos en producción.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Servidor de desarrollo
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Error:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+          example: Mensaje de error
+    ValidationError:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+          example: Error de validación
+        errors:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+    LoginRequest:
+      type: object
+      required:
+        - UserName
+        - Password
+      properties:
+        UserName:
+          type: string
+        Password:
+          type: string
+    LoginResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            access_token:
+              type: string
+            refresh_token:
+              type: string
+            user:
+              $ref: '#/components/schemas/User'
+    User:
+      type: object
+      properties:
+        idUsuario:
+          type: integer
+        idTipoUsuario:
+          type: integer
+        UserName:
+          type: string
+        Nombre:
+          type: string
+        ApellidoPat:
+          type: string
+        ApellidoMat:
+          type: string
+        Activo:
+          type: integer
+    UserType:
+      type: object
+      properties:
+        idTipoUsuario:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    Linea:
+      type: object
+      properties:
+        idLinea:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    Turno:
+      type: object
+      properties:
+        idTurnos:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    Supervisor:
+      type: object
+      properties:
+        idSupervisor:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    TipoProduccion:
+      type: object
+      properties:
+        idTipoProduccion:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    Material:
+      type: object
+      properties:
+        idMaterial:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    RutaMaterial:
+      type: object
+      properties:
+        idMaterialRuta:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    RutaProduccion:
+      type: object
+      properties:
+        idRutaProduccion:
+          type: integer
+        Nombre:
+          type: string
+        VelNominal:
+          type: number
+        Activo:
+          type: integer
+    TipoTiempo:
+      type: object
+      properties:
+        idTiemposTipo:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    FamiliaTiempo:
+      type: object
+      properties:
+        idTiemposFamilia:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    Tiempo:
+      type: object
+      properties:
+        idTiempos:
+          type: integer
+        idTiemposTipo:
+          type: integer
+        idTiemposFamilia:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    EstadoDetencion:
+      type: object
+      properties:
+        idEstado:
+          type: integer
+        Nombre:
+          type: string
+        Activo:
+          type: integer
+    Detencion:
+      type: object
+      properties:
+        idDetencion:
+          type: integer
+        idUsuario:
+          type: integer
+        idLinea:
+          type: integer
+        idTurnos:
+          type: integer
+        idSupervisor:
+          type: integer
+        idTipoProduccion:
+          type: integer
+        Fecha:
+          type: string
+          format: date-time
+        idEstado:
+          type: integer
+        Observaciones:
+          type: string
+    DetencionOF:
+      type: object
+      properties:
+        idDetencionOF:
+          type: integer
+        idDetencion:
+          type: integer
+        idMaterial:
+          type: integer
+        idMaterialRuta:
+          type: integer
+        idRutaProduccion:
+          type: integer
+        CantidadProd:
+          type: integer
+        Lote:
+          type: string
+        Observaciones:
+          type: string
+    DetencionOFDetalle:
+      type: object
+      properties:
+        idDetalles:
+          type: integer
+        idDetencionOF:
+          type: integer
+        idDetencion:
+          type: integer
+        idTiempos:
+          type: integer
+        Fecha:
+          type: string
+          format: date
+        HoraInicio:
+          type: string
+          format: time
+        HoraTermino:
+          type: string
+          format: time
+        Minutos:
+          type: integer
+        Observaciones:
+          type: string
+
+security:
+  - bearerAuth: []
+
+paths:
+  /auth/login:
+    post:
+      summary: Iniciar sesión
+      security: []
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login exitoso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Credenciales inválidas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /auth/register:
+    post:
+      summary: Registrar nuevo usuario
+      security: []
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [UserName, Password, Nombre, ApellidoPat, idTipoUsuario]
+              properties:
+                UserName: {type: string}
+                Password: {type: string}
+                Nombre: {type: string}
+                ApellidoPat: {type: string}
+                idTipoUsuario: {type: integer}
+      responses:
+        '201':
+          description: Usuario registrado
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+
+  /auth/refresh:
+    post:
+      summary: Renovar token JWT
+      security: []
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refresh_token: {type: string}
+      responses:
+        '200':
+          description: Token renovado
+        '401':
+          description: Token inválido
+
+  /users:
+    get:
+      summary: Listar usuarios
+      tags: [Users]
+      responses:
+        '200':
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      summary: Crear usuario
+      tags: [Users]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: Usuario creado
+
+  /users/{id}:
+    get:
+      summary: Obtener usuario por ID
+      tags: [Users]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Datos del usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: Usuario no encontrado
+    put:
+      summary: Actualizar usuario
+      tags: [Users]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Usuario actualizado
+    delete:
+      summary: Eliminar usuario
+      tags: [Users]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Usuario eliminado
+
+  /lineas:
+    get:
+      summary: Listar líneas
+      tags: [Lineas]
+      responses:
+        '200':
+          description: Lista de líneas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Linea'
+    post:
+      summary: Crear línea
+      tags: [Lineas]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Linea'
+      responses:
+        '201':
+          description: Línea creada
+
+  /detenciones:
+    get:
+      summary: Listar todas las detenciones
+      tags: [Detenciones]
+      responses:
+        '200':
+          description: Lista de detenciones
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Detencion'
+    post:
+      summary: Crear detención
+      tags: [Detenciones]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Detencion'
+      responses:
+        '201':
+          description: Detención creada
+
+  /detenciones/abiertas:
+    get:
+      summary: Listar detenciones abiertas
+      tags: [Detenciones]
+      responses:
+        '200':
+          description: Lista de detenciones abiertas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Detencion'
+
+  /detencionesOF:
+    get:
+      summary: Listar OFs
+      tags: [DetencionesOF]
+      responses:
+        '200':
+          description: Lista de OFs
+    post:
+      summary: Crear OF
+      tags: [DetencionesOF]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DetencionOF'
+      responses:
+        '201':
+          description: OF creada
+
+  /detencionesOF/detencion/{id}:
+    get:
+      summary: Obtener OFs por ID de detención
+      tags: [DetencionesOF]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Lista de OFs asociadas a la detención
+
+  /detencionesOFDetalle:
+    get:
+      summary: Listar detalles de OF
+      tags: [DetencionesOFDetalle]
+    post:
+      summary: Crear detalle de OF
+      tags: [DetencionesOFDetalle]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DetencionOFDetalle'
+      responses:
+        '201':
+          description: Detalle creado
+
+  /detencionesOFDetalle/of/{id}:
+    get:
+      summary: Obtener detalles por ID de OF
+      tags: [DetencionesOFDetalle]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Lista de detalles
+
+  /export/detencion/{id}:
+    get:
+      summary: Exportar detención específica
+      tags: [Export]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Archivo exportado (Excel/PDF)
+
+  /export/detenciones:
+    get:
+      summary: Exportar todas las detenciones
+      tags: [Export]
+      responses:
+        '200':
+          description: Archivo exportado
+
+  /export/resumen:
+    get:
+      summary: Exportar resumen general
+      tags: [Export]
+      responses:
+        '200':
+          description: Archivo exportado
