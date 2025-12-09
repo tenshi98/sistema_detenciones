@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Base Model
 *
 * Clase base para todos los modelos con funcionalidad CRUD genérica
@@ -23,6 +24,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Obtiene todos los registros activos
     *
     * @param array $conditions Condiciones WHERE adicionales
@@ -54,6 +56,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Encuentra un registro por ID
     *
     * @param int $id
@@ -77,6 +80,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Crea un nuevo registro
     *
     * @param array $data
@@ -114,6 +118,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Actualiza un registro
     *
     * @param int $id
@@ -157,6 +162,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Elimina (desactiva) un registro
     *
     * @param int $id
@@ -183,6 +189,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Activa un registro
     *
     * @param int $id
@@ -209,6 +216,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Verifica si existe un registro con ciertos criterios
     *
     * @param array $conditions
@@ -246,6 +254,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Filtra los datos para incluir solo campos permitidos
     *
     * @param array $data
@@ -260,6 +269,7 @@ abstract class BaseModel {
     }
 
     /*
+    * ===================================================================
     * Oculta campos sensibles de un registro
     *
     * @param array $record

@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * TipoProduccion Controller
 */
 
@@ -18,6 +19,7 @@ class TipoProduccionController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /tipoProduccion
     */
@@ -32,6 +34,7 @@ class TipoProduccionController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /tipoProduccion/{id}
     */
@@ -52,6 +55,7 @@ class TipoProduccionController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /tipoProduccion
     */
@@ -86,6 +90,7 @@ class TipoProduccionController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /tipoProduccion/{id}
     */
@@ -126,6 +131,7 @@ class TipoProduccionController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /tipoProduccion/{id}
     */
@@ -146,6 +152,7 @@ class TipoProduccionController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /tipoProduccion/{id}/activate
     */

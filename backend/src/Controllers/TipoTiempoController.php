@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * TipoTiempo Controller
 */
 
@@ -18,6 +19,7 @@ class TipoTiempoController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /tiposTiempo
     */
@@ -32,6 +34,7 @@ class TipoTiempoController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /tiposTiempo/{id}
     */
@@ -52,6 +55,7 @@ class TipoTiempoController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /tiposTiempo
     */
@@ -86,6 +90,7 @@ class TipoTiempoController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /tiposTiempo/{id}
     */
@@ -126,6 +131,7 @@ class TipoTiempoController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /tiposTiempo/{id}
     */
@@ -146,6 +152,7 @@ class TipoTiempoController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /tiposTiempo/{id}/activate
     */

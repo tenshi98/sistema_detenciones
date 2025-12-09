@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Rate Limit Middleware
 *
 * Middleware para controlar el rate limiting por IP y usuario
@@ -30,6 +31,7 @@ class RateLimitMiddleware {
     }
 
     /*
+    * ===================================================================
     * Verifica el rate limit
     *
     * @return bool True si está dentro del límite
@@ -84,6 +86,7 @@ class RateLimitMiddleware {
     }
 
     /*
+    * ===================================================================
     * Obtiene el identificador único (IP o usuario)
     *
     * @return string
@@ -100,6 +103,7 @@ class RateLimitMiddleware {
     }
 
     /*
+    * ===================================================================
     * Carga los datos de rate limit
     *
     * @return array
@@ -114,6 +118,7 @@ class RateLimitMiddleware {
     }
 
     /*
+    * ===================================================================
     * Guarda los datos de rate limit
     *
     * @param array $data
@@ -127,6 +132,7 @@ class RateLimitMiddleware {
     }
 
     /*
+    * ===================================================================
     * Limpia datos antiguos (más de 2 ventanas)
     *
     * @param array $data

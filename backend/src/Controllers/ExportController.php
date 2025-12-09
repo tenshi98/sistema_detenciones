@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Export Controller
 *
 * Controlador para exportar reportes
@@ -25,6 +26,7 @@ class ExportController {
     }
 
     /*
+    * ===================================================================
     * Exportar detención completa
     * GET /export/detencion/{id}
     */
@@ -56,6 +58,7 @@ class ExportController {
     }
 
     /*
+    * ===================================================================
     * Exportar listado de detenciones
     * GET /export/detenciones
     */
@@ -85,6 +88,7 @@ class ExportController {
     }
 
     /*
+    * ===================================================================
     * Exportar resumen general
     * GET /export/resumen
     */

@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Routes Definition
 *
 * Define todas las rutas de la aplicación

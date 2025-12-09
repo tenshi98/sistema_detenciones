@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * JWT Middleware
 *
 * Middleware para validar tokens JWT en rutas protegidas
@@ -19,6 +20,7 @@ class JWTMiddleware {
     }
 
     /*
+    * ===================================================================
     * Valida el token JWT y agrega los datos del usuario a la request
     *
     * @return object|null Datos del usuario si el token es válido
@@ -53,6 +55,7 @@ class JWTMiddleware {
     }
 
     /*
+    * ===================================================================
     * Obtiene el usuario actual de la request
     *
     * @return object|null
@@ -62,6 +65,7 @@ class JWTMiddleware {
     }
 
     /*
+    * ===================================================================
     * Verifica si el usuario tiene un tipo específico
     *
     * @param int $tipoUsuarioId
@@ -73,6 +77,7 @@ class JWTMiddleware {
     }
 
     /*
+    * ===================================================================
     * Verifica si el usuario es administrador
     *
     * @return bool
@@ -82,6 +87,7 @@ class JWTMiddleware {
     }
 
     /*
+    * ===================================================================
     * Verifica si el usuario es Control Tiempo
     *
     * @return bool
@@ -91,6 +97,7 @@ class JWTMiddleware {
     }
 
     /*
+    * ===================================================================
     * Verifica si el usuario tiene permiso (Admin o Control Tiempo)
     *
     * @return bool

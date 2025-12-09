@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Validator Utility
 *
 * Utilidades para validación y sanitización de datos
@@ -9,6 +10,7 @@ namespace App\Utils;
 
 class Validator {
     /*
+    * ===================================================================
     * Valida que un campo no esté vacío
     *
     * @param mixed $value
@@ -25,6 +27,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida que un valor sea un email válido
     *
     * @param string $email
@@ -35,6 +38,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida que un valor sea numérico
     *
     * @param mixed $value
@@ -45,6 +49,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida que un valor sea un entero
     *
     * @param mixed $value
@@ -55,6 +60,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida longitud mínima
     *
     * @param string $value
@@ -66,6 +72,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida longitud máxima
     *
     * @param string $value
@@ -77,6 +84,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida que un valor esté en un array de opciones
     *
     * @param mixed $value
@@ -88,6 +96,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida formato de fecha
     *
     * @param string $date
@@ -100,6 +109,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida formato de hora
     *
     * @param string $time
@@ -110,6 +120,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Sanitiza una cadena de texto
     *
     * @param string $value
@@ -120,6 +131,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Sanitiza un email
     *
     * @param string $email
@@ -130,6 +142,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Sanitiza un entero
     *
     * @param mixed $value
@@ -140,6 +153,7 @@ class Validator {
     }
 
     /*
+    * ===================================================================
     * Valida múltiples reglas
     *
     * @param array $data Datos a validar

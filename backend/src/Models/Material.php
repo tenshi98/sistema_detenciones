@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Material Model
 */
 
@@ -11,6 +12,7 @@ class Material extends BaseModel {
     protected $fillable   = ['Nombre', 'Descripcion', 'Activo'];
 
     /*
+    * ===================================================================
     * Valida unicidad de Nombre
     */
     public function validateUniqueNombre(string $nombre, ?int $excludeId = null): bool {

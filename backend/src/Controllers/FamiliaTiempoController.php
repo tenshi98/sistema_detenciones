@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * FamiliaTiempo Controller
 */
 
@@ -18,6 +19,7 @@ class FamiliaTiempoController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /familiasTiempo
     */
@@ -32,6 +34,7 @@ class FamiliaTiempoController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /familiasTiempo/{id}
     */
@@ -52,6 +55,7 @@ class FamiliaTiempoController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /familiasTiempo
     */
@@ -86,6 +90,7 @@ class FamiliaTiempoController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /familiasTiempo/{id}
     */
@@ -126,6 +131,7 @@ class FamiliaTiempoController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /familiasTiempo/{id}
     */
@@ -146,6 +152,7 @@ class FamiliaTiempoController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /familiasTiempo/{id}/activate
     */

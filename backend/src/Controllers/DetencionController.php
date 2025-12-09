@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Detencion Controller
 */
 
@@ -20,6 +21,7 @@ class DetencionController {
     }
 
     /*
+    * ===================================================================
     * Listar todas las detenciones
     * GET /detenciones
     */
@@ -34,6 +36,7 @@ class DetencionController {
     }
 
     /*
+    * ===================================================================
     * Listar detenciones abiertas
     * GET /detenciones/abiertas
     */
@@ -48,6 +51,7 @@ class DetencionController {
     }
 
     /*
+    * ===================================================================
     * Obtener una detención
     * GET /detenciones/{id}
     */
@@ -68,6 +72,7 @@ class DetencionController {
     }
 
     /*
+    * ===================================================================
     * Crear detención
     * POST /detenciones
     */
@@ -116,6 +121,7 @@ class DetencionController {
     }
 
     /*
+    * ===================================================================
     * Actualizar detención
     * PUT /detenciones/{id}
     */

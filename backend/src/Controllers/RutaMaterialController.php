@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * RutaMaterial Controller
 */
 
@@ -18,6 +19,7 @@ class RutaMaterialController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /rutaMaterial
     */
@@ -32,6 +34,7 @@ class RutaMaterialController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /rutaMaterial/{id}
     */
@@ -52,6 +55,7 @@ class RutaMaterialController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /rutaMaterial
     */
@@ -87,6 +91,7 @@ class RutaMaterialController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /rutaMaterial/{id}
     */
@@ -128,6 +133,7 @@ class RutaMaterialController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /rutaMaterial/{id}
     */
@@ -148,6 +154,7 @@ class RutaMaterialController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /rutaMaterial/{id}/activate
     */

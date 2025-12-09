@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Database Connection Manager
 *
 * Gestiona las conexiones a la base de datos usando PDO
@@ -23,6 +24,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Obtiene la instancia singleton de Database
     */
     public static function getInstance(): Database {
@@ -33,6 +35,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Obtiene la conexión PDO
     *
     * @return PDO
@@ -46,6 +49,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Establece la conexión a la base de datos
     *
     * @throws PDOException
@@ -86,6 +90,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Construye el DSN según el driver de base de datos
     *
     * @param string $driver
@@ -118,6 +123,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Inicia una transacción
     */
     public function beginTransaction(): bool {
@@ -125,6 +131,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Confirma una transacción
     */
     public function commit(): bool {
@@ -132,6 +139,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Revierte una transacción
     */
     public function rollback(): bool {
@@ -139,6 +147,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Verifica si hay una transacción activa
     */
     public function inTransaction(): bool {
@@ -146,6 +155,7 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Cierra la conexión
     */
     public function disconnect(): void {
@@ -154,11 +164,13 @@ class Database {
     }
 
     /*
+    * ===================================================================
     * Previene la clonación del objeto
     */
     private function __clone() {}
 
     /*
+    * ===================================================================
     * Previene la deserialización del objeto
     */
     public function __wakeup() {

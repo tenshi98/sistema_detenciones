@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Supervisor Controller
 */
 
@@ -18,6 +19,7 @@ class SupervisorController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /supervisor
     */
@@ -32,6 +34,7 @@ class SupervisorController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /supervisor/{id}
     */
@@ -52,6 +55,7 @@ class SupervisorController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /supervisor
     */
@@ -86,6 +90,7 @@ class SupervisorController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /supervisor/{id}
     */
@@ -126,6 +131,7 @@ class SupervisorController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /supervisor/{id}
     */
@@ -146,6 +152,7 @@ class SupervisorController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /supervisor/{id}/activate
     */

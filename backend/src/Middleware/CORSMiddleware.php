@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * CORS Middleware
 *
 * Middleware para manejar CORS (Cross-Origin Resource Sharing)
@@ -11,6 +12,7 @@ use App\Config\Config;
 
 class CORSMiddleware {
     /*
+    * ===================================================================
     * Maneja las cabeceras CORS
     */
     public static function handle(): void {

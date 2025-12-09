@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * RutaProduccion Controller
 */
 
@@ -18,6 +19,7 @@ class RutaProduccionController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /rutaProduccion
     */
@@ -32,6 +34,7 @@ class RutaProduccionController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /rutaProduccion/{id}
     */
@@ -52,6 +55,7 @@ class RutaProduccionController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /rutaProduccion
     */
@@ -89,6 +93,7 @@ class RutaProduccionController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /rutaProduccion/{id}
     */
@@ -132,6 +137,7 @@ class RutaProduccionController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /rutaProduccion/{id}
     */
@@ -152,6 +158,7 @@ class RutaProduccionController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /rutaProduccion/{id}/activate
     */

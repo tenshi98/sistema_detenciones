@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Configuration Loader
 *
 * Carga las variables de entorno desde el archivo .env
@@ -66,6 +67,7 @@ class Config {
     }
 
     /*
+    * ===================================================================
     * Obtiene la instancia singleton de Config
     */
     public static function getInstance(): Config {
@@ -76,6 +78,7 @@ class Config {
     }
 
     /*
+    * ===================================================================
     * Obtiene un valor de configuración
     *
     * @param string $key Clave en formato 'seccion.clave'
@@ -98,6 +101,7 @@ class Config {
     }
 
     /*
+    * ===================================================================
     * Obtiene toda la configuración
     */
     public function all(): array {

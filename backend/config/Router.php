@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Router
 *
 * Sistema de enrutamiento de la aplicación
@@ -23,6 +24,7 @@ class Router{
     }
 
     /*
+    * ===================================================================
     * Registra una ruta GET
     */
     public function get(string $path, string $controller, string $method, bool $protected = true): void {
@@ -30,6 +32,7 @@ class Router{
     }
 
     /*
+    * ===================================================================
     * Registra una ruta POST
     */
     public function post(string $path, string $controller, string $method, bool $protected = true): void {
@@ -37,6 +40,7 @@ class Router{
     }
 
     /*
+    * ===================================================================
     * Registra una ruta PUT
     */
     public function put(string $path, string $controller, string $method, bool $protected = true): void {
@@ -44,6 +48,7 @@ class Router{
     }
 
     /*
+    * ===================================================================
     * Registra una ruta DELETE
     */
     public function delete(string $path, string $controller, string $method, bool $protected = true): void {
@@ -51,6 +56,7 @@ class Router{
     }
 
     /*
+    * ===================================================================
     * Agrega una ruta
     */
     private function addRoute(string $httpMethod, string $path, string $controller, string $method, bool $protected): void {
@@ -64,6 +70,7 @@ class Router{
     }
 
     /*
+    * ===================================================================
     * Despacha la ruta actual
     */
     public function dispatch(): void {
@@ -103,6 +110,7 @@ class Router{
     }
 
     /*
+    * ===================================================================
     * Convierte un path a regex
     */
     private function convertToRegex(string $path): string {

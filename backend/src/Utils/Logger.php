@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Logger Utility
 *
 * Sistema de logging con niveles INFO, WARNING, ERROR
@@ -19,6 +20,7 @@ class Logger {
     private static $logLevel;
 
     /*
+    * ===================================================================
     * Inicializa el logger
     */
     private static function init(): void {
@@ -35,6 +37,7 @@ class Logger {
     }
 
     /*
+    * ===================================================================
     * Registra un mensaje de nivel INFO
     *
     * @param string $message
@@ -45,6 +48,7 @@ class Logger {
     }
 
     /*
+    * ===================================================================
     * Registra un mensaje de nivel WARNING
     *
     * @param string $message
@@ -55,6 +59,7 @@ class Logger {
     }
 
     /*
+    * ===================================================================
     * Registra un mensaje de nivel ERROR
     *
     * @param string $message
@@ -65,6 +70,7 @@ class Logger {
     }
 
     /*
+    * ===================================================================
     * Registra un mensaje en el archivo de log
     *
     * @param string $level
@@ -101,6 +107,7 @@ class Logger {
     }
 
     /*
+    * ===================================================================
     * Verifica si un nivel debe ser registrado
     *
     * @param string $level
@@ -120,6 +127,7 @@ class Logger {
     }
 
     /*
+    * ===================================================================
     * Rota los archivos de log antiguos (mantiene últimos 30 días)
     */
     private static function rotateLogs(): void {
@@ -134,6 +142,7 @@ class Logger {
     }
 
     /*
+    * ===================================================================
     * Registra una excepción
     *
     * @param \Exception $exception

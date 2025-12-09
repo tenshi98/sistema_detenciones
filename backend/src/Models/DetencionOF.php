@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * DetencionOF Model
 */
 
@@ -19,6 +20,7 @@ class DetencionOF extends BaseModel {
     ];
 
     /*
+    * ===================================================================
     * Valida unicidad de Material + MaterialRuta + Lote
     */
     public function validateUniqueOF(int $idMaterial, int $idMaterialRuta, string $lote, ?int $excludeId = null): bool {
@@ -30,6 +32,7 @@ class DetencionOF extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Obtiene OFs por detención
     */
     public function getByDetencion(int $idDetencion): array {

@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * EstadoDetencion Controller
 */
 
@@ -18,6 +19,7 @@ class EstadoDetencionController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /detencionesEstados
     */
@@ -32,6 +34,7 @@ class EstadoDetencionController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /detencionesEstados/{id}
     */
@@ -52,6 +55,7 @@ class EstadoDetencionController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /detencionesEstados
     */
@@ -86,6 +90,7 @@ class EstadoDetencionController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /detencionesEstados/{id}
     */
@@ -126,6 +131,7 @@ class EstadoDetencionController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /detencionesEstados/{id}
     */
@@ -146,6 +152,7 @@ class EstadoDetencionController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /detencionesEstados/{id}/activate
     */

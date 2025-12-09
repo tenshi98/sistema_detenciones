@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Material Controller
 */
 
@@ -18,6 +19,7 @@ class MaterialController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /material
     */
@@ -32,6 +34,7 @@ class MaterialController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /material/{id}
     */
@@ -52,6 +55,7 @@ class MaterialController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /material
     */
@@ -87,6 +91,7 @@ class MaterialController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /material/{id}
     */
@@ -128,6 +133,7 @@ class MaterialController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /material/{id}
     */
@@ -148,6 +154,7 @@ class MaterialController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /material/{id}/activate
     */

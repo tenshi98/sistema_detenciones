@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Auth Controller
 *
 * Controlador de autenticación (login, registro, refresh token)
@@ -24,6 +25,7 @@ class AuthController {
     }
 
     /*
+    * ===================================================================
     * Login de usuario
     * POST /auth/login
     */
@@ -88,6 +90,7 @@ class AuthController {
     }
 
     /*
+    * ===================================================================
     * Renovar token
     * POST /auth/refresh
     */
@@ -112,6 +115,7 @@ class AuthController {
     }
 
     /*
+    * ===================================================================
     * Registro de usuario
     * POST /auth/register
     */

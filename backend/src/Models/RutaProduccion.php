@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * RutaProduccion Model
 */
 
@@ -11,6 +12,7 @@ class RutaProduccion extends BaseModel {
     protected $fillable   = ['idMaterial', 'idMaterialRuta', 'Nombre', 'VelNominal', 'Activo'];
 
     /*
+    * ===================================================================
     * Valida unicidad de idMaterial + idMaterialRuta + Nombre
     */
     public function validateUniqueidMaterialidMaterialRutaNombre(string $idMaterial, string $idMaterialRuta, string $nombre, ?int $excludeId = null): bool {

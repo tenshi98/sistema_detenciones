@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * DetencionOFDetalle Model
 */
 
@@ -20,6 +21,7 @@ class DetencionOFDetalle extends BaseModel {
     ];
 
     /*
+    * ===================================================================
     * Valida unicidad de DetencionOF + Tiempos + Fecha + HoraInicio + HoraTermino
     */
     public function validateUniqueDetalle(int $idDetencionOF, int $idTiempos, string $fecha, string $horaInicio, string $horaTermino, ?int $excludeId = null): bool {
@@ -33,6 +35,7 @@ class DetencionOFDetalle extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Obtiene detalles por OF
     */
     public function getByOF(int $idDetencionOF): array {
@@ -53,6 +56,7 @@ class DetencionOFDetalle extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Obtiene resumen por detención
     */
     public function getResumenByDetencion(int $idDetencion): array {
@@ -76,6 +80,7 @@ class DetencionOFDetalle extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Obtiene porcentajes por detención
     */
     public function getPorcentajesByDetencion(int $idDetencion): array {

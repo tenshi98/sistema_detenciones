@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * TipoProduccion Model
 */
 
@@ -11,6 +12,7 @@ class TipoProduccion extends BaseModel {
     protected $fillable   = ['Nombre', 'Activo'];
 
     /*
+    * ===================================================================
     * Valida unicidad de Nombre
     */
     public function validateUniqueNombre(string $nombre, ?int $excludeId = null): bool {

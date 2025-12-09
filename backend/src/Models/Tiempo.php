@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Tiempo Model
 */
 
@@ -11,6 +12,7 @@ class Tiempo extends BaseModel {
     protected $fillable   = ['idTiemposTipo', 'idTiemposFamilia', 'Nombre', 'Activo'];
 
     /*
+    * ===================================================================
     * Valida unicidad de idTiemposTipo + idTiemposFamilia + Nombre
     */
     public function validateUniqueidTiemposTipoidTiemposFamiliaNombre(string $idTiemposTipo, string $idTiemposFamilia, string $nombre, ?int $excludeId = null): bool {

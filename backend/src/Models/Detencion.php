@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Detencion Model
 */
 
@@ -20,6 +21,7 @@ class Detencion extends BaseModel {
     ];
 
     /*
+    * ===================================================================
     * Valida unicidad de Linea + Turno + TipoProduccion + Fecha
     */
     public function validateUniqueDetencion(int $idLinea, int $idTurnos, int $idTipoProduccion, string $fecha, ?int $excludeId = null): bool {
@@ -32,6 +34,7 @@ class Detencion extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Obtiene detenciones abiertas
     */
     public function getAbiertas(): array {
@@ -58,6 +61,7 @@ class Detencion extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Obtiene detención con relaciones
     */
     public function findWithRelations(int $id): ?array {

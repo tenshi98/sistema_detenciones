@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * UserType Controller
 */
 
@@ -18,6 +19,7 @@ class UserTypeController {
     }
 
     /*
+    * ===================================================================
     * Listar todos
     * GET /userTypes
     */
@@ -32,6 +34,7 @@ class UserTypeController {
     }
 
     /*
+    * ===================================================================
     * Obtener uno
     * GET /userTypes/{id}
     */
@@ -52,6 +55,7 @@ class UserTypeController {
     }
 
     /*
+    * ===================================================================
     * Crear
     * POST /userTypes
     */
@@ -86,6 +90,7 @@ class UserTypeController {
     }
 
     /*
+    * ===================================================================
     * Actualizar
     * PUT /userTypes/{id}
     */
@@ -126,6 +131,7 @@ class UserTypeController {
     }
 
     /*
+    * ===================================================================
     * Eliminar (desactivar)
     * DELETE /userTypes/{id}
     */
@@ -146,6 +152,7 @@ class UserTypeController {
     }
 
     /*
+    * ===================================================================
     * Activar
     * POST /userTypes/{id}/activate
     */

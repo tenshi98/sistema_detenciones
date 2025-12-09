@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * Response Helper
 *
 * Utilidad para generar respuestas JSON estandarizadas
@@ -9,6 +10,7 @@ namespace App\Utils;
 
 class Response {
     /*
+    * ===================================================================
     * Envía una respuesta JSON exitosa
     *
     * @param mixed $data
@@ -24,6 +26,7 @@ class Response {
     }
 
     /*
+    * ===================================================================
     * Envía una respuesta JSON de error
     *
     * @param string $message
@@ -39,6 +42,7 @@ class Response {
     }
 
     /*
+    * ===================================================================
     * Envía una respuesta JSON
     *
     * @param array $data
@@ -52,6 +56,7 @@ class Response {
     }
 
     /*
+    * ===================================================================
     * Envía una respuesta 404
     */
     public static function notFound(string $message = 'Resource not found'): void {
@@ -59,6 +64,7 @@ class Response {
     }
 
     /*
+    * ===================================================================
     * Envía una respuesta 401
     */
     public static function unauthorized(string $message = 'Unauthorized'): void {
@@ -66,6 +72,7 @@ class Response {
     }
 
     /*
+    * ===================================================================
     * Envía una respuesta 403
     */
     public static function forbidden(string $message = 'Forbidden'): void {
@@ -73,6 +80,7 @@ class Response {
     }
 
     /*
+    * ===================================================================
     * Envía una respuesta 500
     */
     public static function serverError(string $message = 'Internal server error'): void {
@@ -80,6 +88,7 @@ class Response {
     }
 
     /*
+    * ===================================================================
     * Envía una respuesta de validación fallida
     *
     * @param array $errors

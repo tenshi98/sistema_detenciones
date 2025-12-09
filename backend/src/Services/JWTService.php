@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * JWT Service
 *
 * Servicio para generación y validación de tokens JWT
@@ -27,6 +28,7 @@ class JWTService {
     }
 
     /*
+    * ===================================================================
     * Genera un token JWT
     *
     * @param array $payload Datos a incluir en el token
@@ -61,6 +63,7 @@ class JWTService {
     }
 
     /*
+    * ===================================================================
     * Valida y decodifica un token JWT
     *
     * @param string $token
@@ -89,6 +92,7 @@ class JWTService {
     }
 
     /*
+    * ===================================================================
     * Extrae el token del header Authorization
     *
     * @return string|null
@@ -105,6 +109,7 @@ class JWTService {
     }
 
     /*
+    * ===================================================================
     * Verifica si un token está expirado
     *
     * @param string $token
@@ -122,6 +127,7 @@ class JWTService {
     }
 
     /*
+    * ===================================================================
     * Renueva un token
     *
     * @param string $refreshToken

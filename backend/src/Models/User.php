@@ -1,5 +1,6 @@
 <?php
 /*
+* ===================================================================
 * User Model
 */
 
@@ -20,6 +21,7 @@ class User extends BaseModel {
     protected $hidden = ['Password'];
 
     /*
+    * ===================================================================
     * Valida unicidad de UserName
     */
     public function validateUniqueUserName(string $userName, ?int $excludeId = null): bool {
@@ -27,6 +29,7 @@ class User extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Valida unicidad de Nombre + ApellidoPat
     */
     public function validateUniqueFullName(string $nombre, string $apellidoPat, ?int $excludeId = null): bool {
@@ -37,6 +40,7 @@ class User extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Busca usuario por UserName
     */
     public function findByUserName(string $userName): ?array {
@@ -48,6 +52,7 @@ class User extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Verifica password
     */
     public function verifyPassword(string $password, string $hash): bool {
@@ -55,6 +60,7 @@ class User extends BaseModel {
     }
 
     /*
+    * ===================================================================
     * Hash password
     */
     public function hashPassword(string $password): string {
