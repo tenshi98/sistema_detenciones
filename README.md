@@ -2,6 +2,24 @@
 
 Sistema completo para el registro y seguimiento de tiempos muertos en plantas de producción, desarrollado con PHP backend (MVC + JWT) y Next.js frontend.
 
+## 📋 Tabla de Contenidos
+
+- [Descripción](#-descripción)
+- [Características Principales](#-características-principales)
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+- [Requisitos del Sistema](#-requisitos-del-sistema)
+- [Instalación](#-instalación)
+- [Usuario por Defecto](#-usuario-por-defecto)
+- [Tipos de Usuario y Permisos](#-tipos-de-usuario-y-permisos)
+- [Entidades del Sistema](#-entidades-del-sistema)
+- [Flujo de Trabajo](#-flujo-de-trabajo)
+- [Endpoints API Principales](#-endpoints-api-principales)
+- [Migración a Otras Bases de Datos](#-migración-a-otras-bases-de-datos)
+- [Testing](#-testing)
+- [Ejemplos de Uso](#-ejemplos-de-uso)
+- [Solución de Problemas](#-solución-de-problemas)
+- [Documentación Adicional](#-documentación-adicional)
+
 ## 📋 Descripción
 
 Este sistema permite gestionar y analizar los tiempos muertos en líneas de producción, incluyendo:
@@ -65,9 +83,13 @@ sistema_detenciones/
 
 ### Backend
 - PHP >= 7.0
-- MySQL >= 5.7 (o PostgreSQL, SQL Server)
+- MySQL >= 5.7 (o MariaDB 10.2+, PostgreSQL, SQL Server)
 - Composer
-- Extensiones PHP: PDO, pdo_mysql, json, mbstring
+- Extensiones PHP:
+   - `PDO`
+   - `pdo_mysql`
+   - `json`
+   - `mbstring`
 
 ### Frontend
 - Node.js >= 18.0
@@ -268,7 +290,7 @@ curl -X POST http://localhost:8000/detenciones \
   }'
 ```
 
-## 🐛 Troubleshooting
+## 🐛 Solución de Problemas
 
 ### Error de conexión a BD
 - Verificar credenciales en `.env`
